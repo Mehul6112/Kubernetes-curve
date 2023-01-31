@@ -17,23 +17,34 @@ Note: Docker should be installed
 ### Using Kind to Create a Development Environment
   1. To create a cluster with a different name, use the --name option.
   
-     kind create cluster --name=[cluster-name]
+    kind create cluster --name=[cluster-name]
       
   2. Confirm the cluster deployment with kubectl:
   
-     kubectl get nodes
+    kubectl get nodes
       
   *note*: if returns, ""kubectl" command not found" then install kubectl using snap
    
-      snap install kubectl --classic
+     snap install kubectl
+
+     snap install kubectl --classic
       
    3. Check the Created Cluster with get
    
-      kind get clusters
+     kind get clusters
       
-    4. To Delete the Cluster
+   4. To Delete the Cluster
     
-        kind delete cluster
+     kind delete cluster
+
+### Pulling a docker image 
+     
+     docker pull khushichhillar/mydocker:1.0
+
+### using KinD to load the docker image to the cluster
+
+     kind load docker-image khushichhillar/mydocker:1.0
+
     
     
    
